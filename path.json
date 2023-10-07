@@ -1,0 +1,8 @@
+{
+  "folders": [
+    "Example/Parent1/Child1/Child1_2/"
+  ],
+  "exact_paths": [
+    "Example/Parent2/TestEnum.php"
+  ]
+}
