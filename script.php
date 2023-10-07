@@ -6,7 +6,7 @@ $folders = json_decode($path)->folders;
 $exactPaths = json_decode($path)->exact_paths;
 
 foreach ($folders as $folder) {
-    $files = glob('src/' . $folder . '*.php');
+    $files = glob( $folder . '*.php');
 
     if (empty($files)) {
         echo "Ошибка пути {$folder} ";
@@ -20,7 +20,7 @@ foreach ($folders as $folder) {
 }
 
 foreach ($exactPaths as $exactPath) {
-    $file = glob('src/' . $exactPath);
+    $file = glob($exactPath);
 
     if (empty($file)) {
         echo "Ошибка пути {$exactPath} ";
