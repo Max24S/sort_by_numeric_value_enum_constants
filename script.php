@@ -50,7 +50,7 @@ function reorderConstants(string $file): void
     }
     $className = $classNameMatches[1];
 
-    preg_match_all('/public const (\w+) = \'([^\']+)\'/', $content, $matches, PREG_SET_ORDER);
+    preg_match_all('/public const (\w+) = ([0-9]+);/', $content, $matches, PREG_SET_ORDER);
 
     if (empty($matches)) {
         return;
@@ -84,7 +84,7 @@ function generateNewContent(array $constants, string $className): string
     $content = "class $className\n{\n";
 
     foreach ($constants as $constant => $value) {
-        $content .= "    public const $constant = '$value';\n";
+        $content .= "    public const $constant = $value;\n";
     }
 
     $content .= "}\n";
